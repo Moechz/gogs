@@ -1,0 +1,113 @@
+{
+  "app_id": "gogsdocker",
+  "title": "Gogs",
+  "image": "gogs/gogs:0.13.3",
+  "repo_name": "gogs",
+  "mode": "wrapper",
+  "container_port": 3000,
+  "category": [
+    "Development_Tools"
+  ],
+  "volumes": [
+    {
+      "host": "/Volume1/DockerAppData/gogsdocker/data",
+      "container": "/data"
+    }
+  ],
+  "env": {
+    "TZ": "Asia/Shanghai"
+  },
+  "auth": "gogs",
+  "upstream_url": "https://github.com/gogs/gogs",
+  "upstream_license": "MIT",
+  "descript": "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS.",
+  "release_note": "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder.",
+  "important": "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP.",
+  "probe": {
+    "user_in_image": "(root)",
+    "entrypoint": [
+      "/app/gogs/docker/start.sh"
+    ],
+    "cmd": [
+      "/usr/bin/s6-svscan",
+      "/app/gogs/docker/s6/"
+    ],
+    "exposed_ports": [
+      22,
+      3000
+    ],
+    "declared_volumes": [
+      "/backup",
+      "/data"
+    ],
+    "image_healthcheck": [
+      "CMD-SHELL",
+      "(curl -o /dev/null -sS http://localhost:3000/healthcheck) || exit 1"
+    ],
+    "digest": "gogs/gogs@sha256:479343806ba5c640beb94c5a6ff5a9912ac68cf8dfa1ed5873a556042c004f95",
+    "architecture": "x86_64",
+    "platforms": [
+      "x86_64",
+      "aarch64"
+    ],
+    "http_client_in_image": "curl",
+    "trial_run": {
+      "ok": false,
+      "http_code": "",
+      "state": "exited",
+      "paths": [
+        "/backup",
+        "/data"
+      ],
+      "host_port": 18000,
+      "log_tail": "usermod: no changes\ngroupmod: /etc/group.7: Permission denied\ngroupmod: cannot lock /etc/group; try again later.\nchown: /data: Operation not permitted\nchown: /data: Operation not permitted\nerror: failed switching to \"git\": operation not permitted\nerror: failed switching to \"git\": operation not permitted\nerror: failed switching to \"git\": operation not permitted\nerror: failed switching to \"git\": operation not permitted\nerror: failed switching to \"git\": operation not permitted\ntouch: /app/gogs/docker/s6/crond/down: Permission denied\ns6-svscan: fatal: unable to open .s6-svscan/lock: Permission denied",
+      "files_in_mounts": ""
+    },
+    "docker_hub": {},
+    "github": {}
+  },
+  "healthcheck": [
+    "CMD-SHELL",
+    "wget -q -O /dev/null http://127.0.0.1:3000/ || exit 1"
+  ],
+  "entrypoint_file": "src/entrypoint.sh",
+  "platform": "x86_64",
+  "user": "1000:1000",
+  "publisher": "Moechz",
+  "compose_project": "gogsdocker",
+  "github_repo": "gogs",
+  "upstream_version": "0.13.3",
+  "release_tag_prefix": "v",
+  "version": "0.13.3-1",
+  "help": "https://github.com/Moechz/gogs/issues",
+  "official": "https://github.com/gogs/gogs",
+  "license": "MIT",
+  "docker_socket": false,
+  "group_add": [],
+  "host_port": 8163,
+  "healthcheck_start_period": "45s",
+  "wrapper_note": "the image runs its own s6 supervisor as root and switches to the git user,\nwhich is impossible inside a non-root container. This wrapper starts the gogs\nbinary directly with GOGS_WORK_DIR on the mounted data volume.",
+  "wrapper_note_readme": "- **Entrypoint wrapper**: bypasses the upstream s6 supervisor and runs `gogs web` with `GOGS_WORK_DIR=/data` as uid 1000.",
+  "translations": {
+    "zh-cn": {
+      "descript": "Gogs 是轻量级自建 Git 服务：创建仓库、浏览代码与历史、管理 issue、合并请求和 wiki，支持 HTTP 克隆——一个小容器加一个 SQLite 数据库就够，数据保存在应用数据目录，适合在 NAS 上做个人或小团队 Git 服务器。",
+      "important": "需要 DockerEngine（缺失时应用中心会自动安装）。首次访问会进入安装向导（/install）：设置管理员账号、数据库保持 SQLite、应用地址填 http://<NAS-IP>:<端口>/。仓库与数据库保存在 DockerAppData/gogsdocker/data。本包**没有**发布 SSH（22）端口，请用 HTTP 克隆或走反向代理。界面为纯 HTTP。",
+      "release_note": "1. 首个版本：基于 Docker Hub 的 Gogs 0.13.3，以非 root 容器运行。轻量 Git 服务，支持 issue、合并请求与 wiki；SQLite 数据保存在应用数据目录。"
+    },
+    "zh-hk": {
+      "descript": "Gogs 是輕量級自建 Git 服務：建立倉庫、瀏覽程式碼與歷史、管理 issue、合併請求與 wiki，支援 HTTP 克隆——一個小容器加一個 SQLite 資料庫就夠，資料保存在應用資料目錄，適合在 NAS 上做個人或小團隊 Git 伺服器。",
+      "important": "需要 DockerEngine（缺少時應用中心會自動安裝）。首次存取會進入安裝精靈（/install）：設定管理員帳號、資料庫保持 SQLite、應用位址填 http://<NAS-IP>:<端口>/。倉庫與資料庫保存在 DockerAppData/gogsdocker/data。本包**沒有**發佈 SSH（22）端口，請用 HTTP 克隆或走反向代理。介面為純 HTTP。",
+      "release_note": "1. 首個版本：基於 Docker Hub 的 Gogs 0.13.3，以非 root 容器運行。輕量 Git 服務，支援 issue、合併請求與 wiki；SQLite 資料保存在應用資料目錄。"
+    }
+  },
+  "data_notes": "`/data` (mounted from `DockerAppData/gogsdocker/data`) holds `gogs/conf/app.ini`, the SQLite database, repositories, avatars and logs.",
+  "design_notes": [
+    "**Direct binary start.** s6 cannot run as uid 1000; the wrapper runs `gogs web` with the work directory on the volume.",
+    "**SQLite only.** No database server; repositories are plain folders under the data directory."
+  ],
+  "limitations": [
+    "- SSH cloning is not published; use HTTP(S) or a reverse proxy.",
+    "- First-run settings are stored in `app.ini`; changing them needs a restart.",
+    "- The UI is plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+  ]
+}

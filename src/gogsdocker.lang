@@ -1,0 +1,195 @@
+# ===========================================================================
+# Multilingual file for the TOS 7 Docker application "gogsdocker".
+# File name MUST be: <appid>.lang.  23-language superset (14 required by TOS).
+# The App Center picks the text matching the user's device language;
+# untranslated nodes fall back to English, which the official guide allows.
+# Fields: name (app title), auth (upstream author), descript (up to 512
+# chars), release_note, important (up to 512 chars).
+# Translations come from tosapp.json "translations"; run
+#   tosdocker lang <app>          to re-render this file
+#   tosdocker translate <app>     to see what still needs translating
+# ===========================================================================
+[en-us]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[zh-cn]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs 是轻量级自建 Git 服务：创建仓库、浏览代码与历史、管理 issue、合并请求和 wiki，支持 HTTP 克隆——一个小容器加一个 SQLite 数据库就够，数据保存在应用数据目录，适合在 NAS 上做个人或小团队 Git 服务器。"
+release_note = "1. 首个版本：基于 Docker Hub 的 Gogs 0.13.3，以非 root 容器运行。轻量 Git 服务，支持 issue、合并请求与 wiki；SQLite 数据保存在应用数据目录。"
+important    = "需要 DockerEngine（缺失时应用中心会自动安装）。首次访问会进入安装向导（/install）：设置管理员账号、数据库保持 SQLite、应用地址填 http://<NAS-IP>:<端口>/。仓库与数据库保存在 DockerAppData/gogsdocker/data。本包**没有**发布 SSH（22）端口，请用 HTTP 克隆或走反向代理。界面为纯 HTTP。"
+
+[zh-hk]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs 是輕量級自建 Git 服務：建立倉庫、瀏覽程式碼與歷史、管理 issue、合併請求與 wiki，支援 HTTP 克隆——一個小容器加一個 SQLite 資料庫就夠，資料保存在應用資料目錄，適合在 NAS 上做個人或小團隊 Git 伺服器。"
+release_note = "1. 首個版本：基於 Docker Hub 的 Gogs 0.13.3，以非 root 容器運行。輕量 Git 服務，支援 issue、合併請求與 wiki；SQLite 資料保存在應用資料目錄。"
+important    = "需要 DockerEngine（缺少時應用中心會自動安裝）。首次存取會進入安裝精靈（/install）：設定管理員帳號、資料庫保持 SQLite、應用位址填 http://<NAS-IP>:<端口>/。倉庫與資料庫保存在 DockerAppData/gogsdocker/data。本包**沒有**發佈 SSH（22）端口，請用 HTTP 克隆或走反向代理。介面為純 HTTP。"
+
+[fr-fr]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[de-de]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[it-it]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[es-es]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[hu-hu]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[ja-jp]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[ko-kr]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[pl-pl]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[ru-ru]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[tr-tr]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[pt-pt]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[ar-sa]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[cs-cz]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[he-il]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[id-id]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[nb-no]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[nl-nl]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[sv-se]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[th-th]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
+[vi-vn]
+name         = "Gogs"
+auth         = "gogs"
+version      = "@@VERSION@@"
+descript     = "Gogs is a lightweight self-hosted Git service: create repositories, browse code and history, manage issues, pull requests and wikis, and clone over HTTP - all from one small container with an SQLite database in the application data folder. It is a good fit for a personal or small-team Git server on the NAS."
+release_note = "1. First release: Gogs 0.13.3 from Docker Hub as a non-root container. Lightweight Git server with issues, pull requests and wikis; SQLite data in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). The first visit opens the install wizard (/install) - set the admin account and keep SQLite as the database, application URL http://<NAS-IP>:<port>/. Repositories and the database live in DockerAppData/gogsdocker/data. SSH access (port 22) is NOT published by this package; clone over HTTP or use a reverse proxy. Plain HTTP."
+
