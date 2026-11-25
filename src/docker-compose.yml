@@ -1,8 +1,8 @@
 # ===========================================================================
 # Gogs for TerraMaster TOS 7 (Docker application)
 # ===========================================================================
-# Upstream image : gogs/gogs:0.13.3 (Docker Hub, used unmodified)
-#                  -> https://github.com/gogs/gogs
+# Upstream image : gogs/gogs:0.14.4 (Docker Hub, used unmodified)
+#                  -> https://github.com/gogs/gogs  (MIT; 0.14.4, 2026-11-12)
 #
 # Ports   : host 8163 -> container 3000. The host port is in the
 #           TOS-recommended 8000-19999 range and is not one of the reserved
@@ -12,12 +12,18 @@
 #           deliberately NOT used: the platform does not expand it.
 # TOS rules honoured: Docker Hub image with a fixed tag (never ':latest'),
 #           container_name == application id, restart: unless-stopped,
-#           non-root user, no privileged mode, no network_mode: host, no
-#           cap_add, explicit TZ, a healthcheck on the only service, and
-#           x-app-meta as the last block.
-# Wrapper : the image runs its own s6 supervisor as root and switches to the git user,
-#           which is impossible inside a non-root container. This wrapper starts the gogs
-#           binary directly with GOGS_WORK_DIR on the mounted data volume.
+#           non-root user, dropped capabilities, no-new-privileges,
+#           no privileged mode, no network_mode: host, no cap_add, explicit
+#           TZ, a healthcheck on the only service, and x-app-meta as the last
+#           block.
+# Wrapper : the image runs its own s6 supervisor as root and switches to the
+#           git user, which is impossible inside a non-root container. This
+#           wrapper starts the gogs binary directly with GOGS_WORK_DIR on the
+#           mounted data volume, seeds/normalises app.ini and gives the file
+#           session store an absolute path below /data (0.14.4 resolves the
+#           relative default "data/sessions" against /app/gogs, which is
+#           root-owned in the aarch64 image and produces HTTP 500 on every
+#           page after the first-run setup).
 # Escaping: docker compose interpolates ${VAR}/$VAR in compose files, so any
 #           '$' meant for the shell is written '$$'.
 #
@@ -29,10 +35,14 @@
 
 services:
   gogsdocker:
-    image: gogs/gogs:0.13.3
+    image: gogs/gogs:0.14.4
     container_name: gogsdocker
     restart: unless-stopped
     user: "1000:1000"
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
     entrypoint: ["/bin/sh", "-c"]
     command:
       - |
@@ -44,11 +54,11 @@ services:
     volumes:
       - /Volume1/DockerAppData/gogsdocker/data:/data
     healthcheck:
-      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:3000/ || exit 1"]
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:3000/healthcheck || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 45s
+      start_period: 60s
 
 # TOS App Center web metadata (must be the last block of the file):
 # web.port is the published host port above, protocol is http.
